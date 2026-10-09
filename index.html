@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I'm Really Sorry Kashish... 🥺 Pink Apology</title>
+    <title>For Kashish ✨ My Heart & Sincere Apology 💖</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts -->
@@ -21,91 +21,71 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
-            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 50%, #ffd1dc 100%);
+            background: linear-gradient(135deg, #fff0f5 0%, #ffe4e1 40%, #ffd1dc 100%);
             overflow-x: hidden;
         }
         .font-handwriting {
             font-family: 'Caveat', cursive;
         }
-        .font-poppins {
-            font-family: 'Poppins', sans-serif;
-        }
 
-        /* Custom Soft Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #fff0f5;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #f472b6;
-            border-radius: 10px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #fff0f5; }
+        ::-webkit-scrollbar-thumb { background: #f472b6; border-radius: 10px; }
 
-        /* Soft Glow Effect */
-        .pink-glow {
-            box-shadow: 0 10px 30px -5px rgba(244, 114, 182, 0.3);
-        }
-        .pink-glow-lg {
-            box-shadow: 0 20px 40px -10px rgba(244, 114, 182, 0.4);
-        }
+        .pink-glow { box-shadow: 0 10px 30px -5px rgba(244, 114, 182, 0.35); }
+        .pink-glow-lg { box-shadow: 0 20px 40px -10px rgba(244, 114, 182, 0.45); }
 
-        /* Glassmorphism Card */
         .glass-card {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1.5px solid rgba(255, 255, 255, 0.9);
         }
 
-        /* Teddy SVG Animation Elements */
-        .tear-left, .tear-right {
-            opacity: 0;
-        }
-
-        /* Pulsing background elements */
-        @keyframes float-slow {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
-        }
-        .floating {
-            animation: float-slow 4s ease-in-out infinite;
-        }
-
-        /* Envelope Flip Animation */
-        .perspective-1000 {
-            perspective: 1000px;
-        }
+        .perspective-1000 { perspective: 1000px; }
         .letter-card {
             transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             transform-style: preserve-3d;
         }
-        .letter-card.open {
-            transform: rotateY(180deg);
-        }
+        .letter-card.open { transform: rotateY(180deg); }
         .backface-hidden {
             backface-visibility: hidden;
             -webkit-backface-visibility: hidden;
         }
+
+        /* Polaroid Tilt Effect */
+        .polaroid {
+            background: white;
+            padding: 10px 10px 25px 10px;
+            box-shadow: 0 8px 20px rgba(244, 114, 182, 0.25);
+            transition: all 0.3s ease;
+        }
+        .polaroid:hover {
+            transform: scale(1.05) rotate(0deg) !important;
+            z-index: 30;
+        }
     </style>
 </head>
-<body class="text-pink-900 min-h-screen relative">
+<body class="text-pink-900 min-h-screen relative selection:bg-pink-300">
 
-    <!-- Floating Background Hearts Canvas / Container -->
+    <!-- Audio Music Toggle Floating Button -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="music-btn" class="bg-white/90 backdrop-blur-md border border-pink-300 text-pink-600 px-4 py-2 rounded-full shadow-lg hover:bg-pink-50 transition flex items-center gap-2 text-xs font-bold">
+            <i id="music-icon" class="fa-solid fa-music text-pink-500"></i> <span id="music-text">Play Soft Tunes 🎶</span>
+        </button>
+    </div>
+
+    <!-- Floating Background Hearts -->
     <div id="hearts-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
 
-    <!-- GSAP Animated Floating Clouds Section in Background -->
+    <!-- GSAP Animated Floating Clouds -->
     <div id="clouds-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-60">
-        <!-- SVG Cloud 1 -->
-        <svg class="cloud-item absolute top-12 left-[-150px] w-48 md:w-72 text-white fill-current filter drop-shadow-md" viewBox="0 0 24 24">
+        <svg class="cloud-item absolute top-8 left-[-150px] w-48 md:w-72 text-white fill-current filter drop-shadow-md" viewBox="0 0 24 24">
             <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
         </svg>
-        <!-- SVG Cloud 2 -->
-        <svg class="cloud-item absolute top-40 right-[-180px] w-56 md:w-80 text-pink-100 fill-current filter drop-shadow-sm" viewBox="0 0 24 24">
+        <svg class="cloud-item absolute top-36 right-[-180px] w-56 md:w-80 text-pink-100 fill-current filter drop-shadow-sm" viewBox="0 0 24 24">
             <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
         </svg>
-        <!-- SVG Cloud 3 -->
         <svg class="cloud-item absolute top-[60vh] left-[-200px] w-64 md:w-96 text-white fill-current filter drop-shadow-md" viewBox="0 0 24 24">
             <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
         </svg>
@@ -114,181 +94,321 @@
     <!-- Main Container -->
     <main class="relative z-10 max-w-4xl mx-auto px-4 py-8 md:py-12 flex flex-col items-center">
 
-        <!-- Header / Hero Section -->
-        <header class="text-center mt-4 md:mt-8 hero-text">
-            <span class="inline-block px-4 py-1.5 rounded-full bg-pink-200/80 text-pink-700 text-sm font-semibold tracking-wide uppercase mb-3 shadow-sm">
-                <i class="fa-solid fa-heart mr-1.5 text-pink-500"></i> From the bottom of my heart
+        <!-- Hero Header -->
+        <header class="text-center mt-2 md:mt-6 hero-text">
+            <span class="inline-block px-4 py-1.5 rounded-full bg-pink-200/80 text-pink-700 text-xs md:text-sm font-semibold tracking-wide uppercase mb-3 shadow-sm">
+                <i class="fa-solid fa-sparkles mr-1.5 text-pink-500"></i> Created Especially For Kashish
             </span>
             <h1 class="text-4xl md:text-6xl font-extrabold text-pink-800 tracking-tight mb-2">
-                I Am So Sorry, Kashish...
+                Hey Dearest Kashish... ✨
             </h1>
-            <p class="text-lg md:text-xl text-pink-600 font-medium max-w-md mx-auto">
-                I made a mistake, Kashish, and I hate knowing that I upset you.
+            <p class="text-base md:text-xl text-pink-600 font-medium max-w-md mx-auto">
+                Please mujhe maaf krdo madam 🥺🥺🥺
             </p>
         </header>
 
-        <!-- Animated Sad Teddy Bear Section -->
-        <section class="w-full max-w-xs md:max-w-sm my-6 flex flex-col items-center cursor-pointer group" id="teddy-section" title="Click teddy to make him happy!">
-            <div class="relative w-56 h-56 md:w-64 md:h-64 flex items-center justify-center">
-                <!-- SVG Animated Cute Teddy Bear -->
-                <svg id="teddy-svg" class="w-full h-full filter drop-shadow-xl transform transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Ears -->
-                    <circle cx="55" cy="55" r="22" fill="#C48B68" />
-                    <circle cx="55" cy="55" r="14" fill="#E8B496" />
-                    <circle cx="145" cy="55" r="22" fill="#C48B68" />
-                    <circle cx="145" cy="55" r="14" fill="#E8B496" />
-                    
-                    <!-- Body -->
-                    <ellipse cx="100" cy="140" rx="48" ry="42" fill="#D29875" />
-                    <!-- Tummy patch -->
-                    <ellipse cx="100" cy="142" rx="30" ry="26" fill="#F3D5C5" />
-                    
-                    <!-- Head -->
-                    <circle cx="100" cy="90" r="46" fill="#D29875" />
-                    
-                    <!-- Snout -->
-                    <ellipse cx="100" cy="98" rx="18" ry="14" fill="#F3D5C5" />
-                    <!-- Nose -->
-                    <ellipse cx="100" cy="92" rx="7" ry="5" fill="#5C3A21" />
-                    
-                    <!-- Sad Mouth (Inverted Curve) -->
-                    <path id="teddy-mouth" d="M94 105 Q100 100 106 105" stroke="#5C3A21" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <!-- Cute Characters Row: Teddy Bear & Curly Boy Doing Situps -->
+        <section class="w-full max-w-2xl my-6 flex flex-col sm:flex-row items-center justify-center gap-6">
+            
+            <!-- Teddy Bear -->
+            <div class="flex flex-col items-center cursor-pointer group" id="teddy-section" title="Click teddy to make him happy!">
+                <div class="relative w-44 h-44 md:w-52 md:h-52 flex items-center justify-center">
+                    <svg id="teddy-svg" class="w-full h-full filter drop-shadow-xl transform transition-transform duration-300 group-hover:scale-105" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="55" cy="55" r="22" fill="#C48B68" />
+                        <circle cx="55" cy="55" r="14" fill="#E8B496" />
+                        <circle cx="145" cy="55" r="22" fill="#C48B68" />
+                        <circle cx="145" cy="55" r="14" fill="#E8B496" />
+                        
+                        <ellipse cx="100" cy="140" rx="48" ry="42" fill="#D29875" />
+                        <ellipse cx="100" cy="142" rx="30" ry="26" fill="#F3D5C5" />
+                        
+                        <circle cx="100" cy="90" r="46" fill="#D29875" />
+                        <ellipse cx="100" cy="98" rx="18" ry="14" fill="#F3D5C5" />
+                        <ellipse cx="100" cy="92" rx="7" ry="5" fill="#5C3A21" />
+                        
+                        <path id="teddy-mouth" d="M94 105 Q100 100 106 105" stroke="#5C3A21" stroke-width="2.5" stroke-linecap="round" fill="none" />
 
-                    <!-- Eyes -->
-                    <g id="teddy-eyes">
-                        <!-- Left Eye -->
-                        <circle cx="82" cy="82" r="5" fill="#3D2314" />
-                        <circle cx="80.5" cy="80.5" r="1.8" fill="white" />
-                        <!-- Right Eye -->
-                        <circle cx="118" cy="82" r="5" fill="#3D2314" />
-                        <circle cx="116.5" cy="80.5" r="1.8" fill="white" />
-                    </g>
+                        <g id="teddy-eyes">
+                            <circle cx="82" cy="82" r="5" fill="#3D2314" />
+                            <circle cx="80.5" cy="80.5" r="1.8" fill="white" />
+                            <circle cx="118" cy="82" r="5" fill="#3D2314" />
+                            <circle cx="116.5" cy="80.5" r="1.8" fill="white" />
+                        </g>
 
-                    <!-- Sad Eyebrows -->
-                    <path d="M75 73 Q82 76 88 74" stroke="#5C3A21" stroke-width="2" stroke-linecap="round" fill="none" />
-                    <path d="M125 73 Q118 76 112 74" stroke="#5C3A21" stroke-width="2" stroke-linecap="round" fill="none" />
+                        <path d="M75 73 Q82 76 88 74" stroke="#5C3A21" stroke-width="2" stroke-linecap="round" fill="none" />
+                        <path d="M125 73 Q118 76 112 74" stroke="#5C3A21" stroke-width="2" stroke-linecap="round" fill="none" />
 
-                    <!-- Tears (Hidden by default, animated by GSAP) -->
-                    <path class="tear-left" d="M82 89 C80 94 80 98 82 101 C84 98 84 94 82 89 Z" fill="#60A5FA" />
-                    <path class="tear-right" d="M118 89 C116 94 116 98 118 101 C120 98 120 94 118 89 Z" fill="#60A5FA" />
+                        <g id="held-heart" class="transform origin-center">
+                            <path d="M100 135 C100 135 80 115 80 102 C80 94 86 88 94 88 C98.5 88 100 92 100 92 C100 92 101.5 88 106 88 C114 88 120 94 120 102 C120 115 100 135 100 135 Z" fill="#F43F5E" />
+                            <text x="100" y="106" font-family="'Nunito', sans-serif" font-size="7" font-weight="800" fill="white" text-anchor="middle">SORRY</text>
+                        </g>
 
-                    <!-- Paws holding a heart -->
-                    <!-- Heart held by teddy -->
-                    <g id="held-heart" class="transform origin-center">
-                        <path d="M100 135 C100 135 80 115 80 102 C80 94 86 88 94 88 C98.5 88 100 92 100 92 C100 92 101.5 88 106 88 C114 88 120 94 120 102 C120 115 100 135 100 135 Z" fill="#F43F5E" />
-                        <!-- Text on Heart -->
-                        <text x="100" y="106" font-family="'Nunito', sans-serif" font-size="7" font-weight="800" fill="white" text-anchor="middle">SORRY</text>
-                    </g>
+                        <ellipse cx="68" cy="125" rx="11" ry="18" fill="#C48B68" transform="rotate(25 68 125)" />
+                        <ellipse cx="132" cy="125" rx="11" ry="18" fill="#C48B68" transform="rotate(-25 132 125)" />
 
-                    <!-- Arms -->
-                    <ellipse cx="68" cy="125" rx="11" ry="18" fill="#C48B68" transform="rotate(25 68 125)" />
-                    <ellipse cx="132" cy="125" rx="11" ry="18" fill="#C48B68" transform="rotate(-25 132 125)" />
-
-                    <!-- Feet -->
-                    <ellipse cx="68" cy="172" rx="15" ry="11" fill="#C48B68" />
-                    <ellipse cx="68" cy="172" rx="9" ry="6" fill="#F3D5C5" />
-                    
-                    <ellipse cx="132" cy="172" rx="15" ry="11" fill="#C48B68" />
-                    <ellipse cx="132" cy="172" rx="9" ry="6" fill="#F3D5C5" />
-                </svg>
+                        <ellipse cx="68" cy="172" rx="15" ry="11" fill="#C48B68" />
+                        <ellipse cx="68" cy="172" rx="9" ry="6" fill="#F3D5C5" />
+                        <ellipse cx="132" cy="172" rx="15" ry="11" fill="#C48B68" />
+                        <ellipse cx="132" cy="172" rx="9" ry="6" fill="#F3D5C5" />
+                    </svg>
+                </div>
+                <p class="text-xs font-semibold text-pink-500 mt-1 bg-white/80 px-3 py-1 rounded-full shadow-sm border border-pink-200">
+                    <i class="fa-solid fa-hand-pointer mr-1 animate-bounce"></i> Tap teddy!
+                </p>
             </div>
-            <p class="text-xs font-semibold text-pink-500 mt-2 bg-white/70 px-3 py-1 rounded-full shadow-sm border border-pink-200">
-                <i class="fa-solid fa-hand-pointer mr-1 animate-bounce"></i> Tap the teddy to comfort him!
-            </p>
+
+            <!-- Curly Hair Boy Doing Situps -->
+            <div class="flex flex-col items-center relative" id="boy-section">
+                <div class="bg-white text-pink-800 text-xs font-bold px-3 py-1.5 rounded-2xl shadow-md border border-pink-200 mb-1 relative animate-bounce">
+                    "Sorry Kashish 🥺"
+                    <div class="w-2 h-2 bg-white rotate-45 absolute -bottom-1 left-1/2 -translate-x-1/2 border-r border-b border-pink-200"></div>
+                </div>
+
+                <div class="relative w-44 h-44 md:w-52 md:h-52 flex items-center justify-center">
+                    <svg id="boy-svg" class="w-full h-full filter drop-shadow-xl" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="boy-full-body">
+                            <ellipse cx="75" cy="175" rx="14" ry="8" fill="#F472B6" />
+                            <ellipse cx="125" cy="175" rx="14" ry="8" fill="#F472B6" />
+                            <path d="M70 145 L75 170 M130 145 L125 170" stroke="#FDBA74" stroke-width="10" stroke-linecap="round" />
+
+                            <path d="M75 110 Q100 100 125 110 L120 150 Q100 155 80 150 Z" fill="#FB7185" />
+                            <text x="100" y="135" font-family="'Nunito', sans-serif" font-size="8" font-weight="800" fill="white" text-anchor="middle">SORRY</text>
+
+                            <circle cx="100" cy="75" r="30" fill="#FED7AA" />
+
+                            <g fill="#4A2E12">
+                                <circle cx="80" cy="50" r="10" />
+                                <circle cx="92" cy="46" r="11" />
+                                <circle cx="108" cy="46" r="11" />
+                                <circle cx="120" cy="50" r="10" />
+                                <circle cx="72" cy="58" r="9" />
+                                <circle cx="128" cy="58" r="9" />
+                                <circle cx="85" cy="42" r="8" />
+                                <circle cx="100" cy="40" r="9" />
+                                <circle cx="115" cy="42" r="8" />
+                            </g>
+
+                            <circle cx="68" cy="75" r="7" fill="#FED7AA" />
+                            <circle cx="132" cy="75" r="7" fill="#FED7AA" />
+
+                            <path d="M82 63 Q88 67 92 64" stroke="#4A2E12" stroke-width="2" stroke-linecap="round" />
+                            <path d="M118 63 Q112 67 108 64" stroke="#4A2E12" stroke-width="2" stroke-linecap="round" />
+                            <circle cx="87" cy="72" r="3.5" fill="#3D2314" />
+                            <circle cx="86" cy="71" r="1" fill="white" />
+                            <circle cx="113" cy="72" r="3.5" fill="#3D2314" />
+                            <circle cx="112" cy="71" r="1" fill="white" />
+                            <ellipse cx="80" cy="78" rx="4" ry="2.5" fill="#F472B6" opacity="0.6" />
+                            <ellipse cx="120" cy="78" rx="4" ry="2.5" fill="#F472B6" opacity="0.6" />
+                            <path d="M94 85 Q100 80 106 85" stroke="#3D2314" stroke-width="2" stroke-linecap="round" fill="none" />
+
+                            <path d="M78 115 Q95 90 130 75" stroke="#FED7AA" stroke-width="7" stroke-linecap="round" fill="none" />
+                            <path d="M122 115 Q105 90 70 75" stroke="#FED7AA" stroke-width="7" stroke-linecap="round" fill="none" />
+                        </g>
+                    </svg>
+                </div>
+                <p class="text-xs font-semibold text-pink-500 mt-1 bg-white/80 px-3 py-1 rounded-full shadow-sm border border-pink-200">
+                    Doing 100 situps for Kashish! 🙇‍♂️
+                </p>
+            </div>
+
         </section>
 
-        <!-- Interactive Apology Letter Card (3D Flip / Reveal) -->
+        <!-- Interactive Apology Envelope Letter -->
         <section class="w-full max-w-lg my-6 perspective-1000 letter-section">
-            <div id="letter-card" class="letter-card relative w-full glass-card rounded-3xl p-6 md:p-8 pink-glow border border-white cursor-pointer min-h-[300px] flex flex-col justify-center">
-                
-                <!-- Front Side: Closed Envelope / Teaser -->
+            <div id="letter-card" class="letter-card relative w-full glass-card rounded-3xl p-6 md:p-8 pink-glow border border-white cursor-pointer min-h-[320px] flex flex-col justify-center">
                 <div class="letter-front text-center flex flex-col items-center justify-center space-y-4">
                     <div class="w-16 h-16 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center text-2xl shadow-inner mb-1">
                         <i class="fa-solid fa-envelope-open-text"></i>
                     </div>
                     <h2 class="text-2xl font-bold text-pink-800">For Kashish 💌</h2>
-                    <p class="text-sm text-pink-600 max-w-xs">Click anywhere on this card to open and read what I wanted to say to you, Kashish.</p>
+                    <p class="text-sm text-pink-600 max-w-xs">Tap anywhere on this card to open and read what I wanted to say to you, Kashish.</p>
                     <span class="inline-flex items-center text-xs font-bold text-pink-500 bg-pink-50 px-4 py-2 rounded-full border border-pink-200">
                         Open Letter <i class="fa-solid fa-arrow-right ml-2"></i>
                     </span>
                 </div>
 
-                <!-- Back Side: Detailed Letter -->
-                <div class="letter-back absolute inset-0 p-6 md:p-8 backface-hidden bg-white/90 rounded-3xl flex flex-col justify-between [transform:rotateY(180deg)] text-left border-2 border-pink-200 overflow-y-auto">
+                <div class="letter-back absolute inset-0 p-6 md:p-8 backface-hidden bg-white/95 rounded-3xl flex flex-col justify-between [transform:rotateY(180deg)] text-left border-2 border-pink-200 overflow-y-auto">
                     <div>
                         <div class="flex justify-between items-center mb-3 border-b border-pink-100 pb-2">
                             <h3 class="font-handwriting text-3xl font-bold text-pink-700">Dearest Kashish,</h3>
                             <i class="fa-solid fa-heart text-pink-400"></i>
                         </div>
                         <p class="text-pink-900 text-sm md:text-base leading-relaxed mb-3">
-                            I am truly sorry for how I acted. Your smile means the absolute world to me, Kashish, and knowing that I caused you pain breaks my heart.
+                            I am really, really sorry. <strong>As I was into some other talk so it happened.</strong> I never ever intended to make you feel ignored or upset.
                         </p>
                         <p class="text-pink-900 text-sm md:text-base leading-relaxed mb-3">
-                            I never meant to hurt you or make you feel frustrated. You deserve nothing but happiness, love, and respect. Please forgive my carelessness.
+                            <strong>I promise I will listen to you carefully from now and would not repeat this mistake.</strong> Your feelings mean everything to me.
+                        </p>
+                        <p class="text-pink-800 font-bold text-sm md:text-base leading-relaxed">
+                            Please mujhe maaf krdo madam 🥺🥺🥺
                         </p>
                     </div>
                     <div class="mt-4 pt-2 border-t border-pink-100 flex justify-between items-end">
-                        <span class="font-handwriting text-2xl font-bold text-pink-600">With all my love ❤️</span>
-                        <span class="text-xs text-pink-400 font-semibold">(Click to flip back)</span>
+                        <span class="font-handwriting text-2xl font-bold text-pink-600">With all my heart ❤️</span>
+                        <span class="text-xs text-pink-400 font-semibold">(Tap to flip back)</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cute Memory / Polaroid Cards Section -->
+        <section class="w-full max-w-2xl my-8 px-2">
+            <h2 class="text-center text-2xl md:text-3xl font-bold text-pink-800 mb-6">
+                Sweet Reminders For Kashish 📸
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                
+                <div class="polaroid rounded-xl text-center transform -rotate-3">
+                    <div class="w-full h-36 bg-pink-100 rounded-lg flex items-center justify-center text-4xl text-pink-400 mb-3">
+                        🌸
+                    </div>
+                    <p class="font-handwriting text-xl font-bold text-pink-700">Your Smile Is Pure Magic</p>
+                </div>
+
+                <div class="polaroid rounded-xl text-center transform rotate-2">
+                    <div class="w-full h-36 bg-pink-100 rounded-lg flex items-center justify-center text-4xl text-pink-400 mb-3">
+                        ✨
+                    </div>
+                    <p class="font-handwriting text-xl font-bold text-pink-700">Always In My Thoughts</p>
+                </div>
+
+                <div class="polaroid rounded-xl text-center transform -rotate-2">
+                    <div class="w-full h-36 bg-pink-100 rounded-lg flex items-center justify-center text-4xl text-pink-400 mb-3">
+                        🧸
+                    </div>
+                    <p class="font-handwriting text-xl font-bold text-pink-700">100% Guaranteed Care</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- Reasons Why I'm Sorry Grid -->
-        <section class="w-full max-w-2xl my-8 px-2 reasons-section">
+        <!-- Apology Coupons Section -->
+        <section class="w-full max-w-2xl my-6 px-2">
+            <h2 class="text-center text-2xl md:text-3xl font-bold text-pink-800 mb-2">
+                Redeemable Apology Coupons 🎟️
+            </h2>
+            <p class="text-center text-xs text-pink-600 mb-6">Click any coupon below to redeem it right now!</p>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="coupon-card glass-card rounded-2xl p-4 text-center border-2 border-dashed border-pink-300 hover:border-pink-500 cursor-pointer transition" onclick="redeemCoupon('1x Favorite Food / Snack On Me! 🍕')">
+                    <span class="text-2xl">🍕</span>
+                    <h3 class="font-bold text-pink-800 text-sm mt-1">Snack Coupon</h3>
+                    <p class="text-[11px] text-pink-600 mt-1">1x Treat of your choice on me!</p>
+                </div>
+
+                <div class="coupon-card glass-card rounded-2xl p-4 text-center border-2 border-dashed border-pink-300 hover:border-pink-500 cursor-pointer transition" onclick="redeemCoupon('1x Win Any Argument Instantly! 👑')">
+                    <span class="text-2xl">👑</span>
+                    <h3 class="font-bold text-pink-800 text-sm mt-1">Argument Winner</h3>
+                    <p class="text-[11px] text-pink-600 mt-1">You win automatically without debate!</p>
+                </div>
+
+                <div class="coupon-card glass-card rounded-2xl p-4 text-center border-2 border-dashed border-pink-300 hover:border-pink-500 cursor-pointer transition" onclick="redeemCoupon('1x Infinite Listening & Attention Session! 🎧')">
+                    <span class="text-2xl">🎧</span>
+                    <h3 class="font-bold text-pink-800 text-sm mt-1">100% Attention</h3>
+                    <p class="text-[11px] text-pink-600 mt-1">Full, uninterrupted listening time!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mood Booster Zone -->
+        <section class="w-full max-w-2xl my-8 px-2">
             <h2 class="text-center text-2xl md:text-3xl font-bold text-pink-800 mb-6">
-                Why I'm Asking You For Forgiveness, Kashish 💭
+                Kashish's Happiness Corner 🌸
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 
+                <!-- Compliment Generator -->
+                <div class="glass-card rounded-2xl p-5 text-center pink-glow flex flex-col justify-between items-center">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center mb-2 text-xl">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="font-bold text-pink-800 text-sm mb-2">Compliment For You</h3>
+                    <p id="compliment-text" class="text-xs text-pink-600 font-medium italic mb-3 min-h-[40px]">
+                        "Click the button below to get a sweet reminder!"
+                    </p>
+                    <button id="compliment-btn" class="text-xs font-bold bg-pink-500 text-white px-4 py-2 rounded-full shadow hover:bg-pink-600 transition">
+                        Get Compliment ✨
+                    </button>
+                </div>
+
+                <!-- Virtual Hug Machine -->
+                <div class="glass-card rounded-2xl p-5 text-center pink-glow flex flex-col justify-between items-center">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center mb-2 text-xl">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                    </div>
+                    <h3 class="font-bold text-pink-800 text-sm mb-2">Virtual Hug Counter</h3>
+                    <div class="text-3xl font-extrabold text-pink-600 my-1" id="hug-count">0</div>
+                    <p class="text-xs text-pink-500 mb-3">Hugs sent to Kashish</p>
+                    <button id="hug-btn" class="text-xs font-bold bg-rose-400 text-white px-4 py-2 rounded-full shadow hover:bg-rose-500 transition">
+                        Send Hug 🤗
+                    </button>
+                </div>
+
+                <!-- Cute Heart Catcher Game Launcher -->
+                <div class="glass-card rounded-2xl p-5 text-center pink-glow flex flex-col justify-between items-center">
+                    <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center mb-2 text-xl">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="font-bold text-pink-800 text-sm mb-2">Mini Joy Game</h3>
+                    <p class="text-xs text-pink-600 font-medium mb-3">
+                        Catch 5 falling hearts to unlock a secret message!
+                    </p>
+                    <button id="game-start-btn" class="text-xs font-bold bg-pink-500 text-white px-4 py-2 rounded-full shadow hover:bg-pink-600 transition">
+                        Play Mini Game 🎮
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Reasons Why I'm Asking For Forgiveness Grid -->
+        <section class="w-full max-w-2xl my-6 px-2 reasons-section">
+            <h2 class="text-center text-2xl md:text-3xl font-bold text-pink-800 mb-6">
+                Why I'm Asking You For Forgiveness 💭
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="reason-card glass-card rounded-2xl p-5 text-center pink-glow hover:bg-white/90 transition-all duration-300">
                     <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
                         <i class="fa-solid fa-face-sad-tear"></i>
                     </div>
-                    <h3 class="font-bold text-pink-800 mb-1">Your Smile Matters</h3>
-                    <p class="text-xs text-pink-600">Seeing you upset, Kashish, because of me is the worst feeling in the world.</p>
+                    <h3 class="font-bold text-pink-800 mb-1">I Realize My Mistake</h3>
+                    <p class="text-xs text-pink-600">As I was into some other talk so it happened, and I feel really terrible about it.</p>
                 </div>
 
                 <div class="reason-card glass-card rounded-2xl p-5 text-center pink-glow hover:bg-white/90 transition-all duration-300">
                     <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
-                        <i class="fa-solid fa-seedling"></i>
+                        <i class="fa-solid fa-ear-listen"></i>
                     </div>
-                    <h3 class="font-bold text-pink-800 mb-1">I Will Do Better</h3>
-                    <p class="text-xs text-pink-600">I am learning from this mistake and promise to be more understanding.</p>
+                    <h3 class="font-bold text-pink-800 mb-1">My Promise To You</h3>
+                    <p class="text-xs text-pink-600">I promise I will listen to you carefully from now and would not repeat this mistake.</p>
                 </div>
 
                 <div class="reason-card glass-card rounded-2xl p-5 text-center pink-glow hover:bg-white/90 transition-all duration-300">
                     <div class="w-12 h-12 bg-pink-100 text-pink-500 rounded-full flex items-center justify-center mx-auto mb-3 text-xl">
-                        <i class="fa-solid fa-infinity"></i>
+                        <i class="fa-solid fa-heart-crack"></i>
                     </div>
-                    <h3 class="font-bold text-pink-800 mb-1">You Mean Everything</h3>
-                    <p class="text-xs text-pink-600">Our bond is precious to me, and I never want to take you for granted, Kashish.</p>
+                    <h3 class="font-bold text-pink-800 mb-1">From My Heart</h3>
+                    <p class="text-xs text-pink-600">Please mujhe maaf krdo madam 🥺🥺🥺 You mean so much to me!</p>
                 </div>
-
             </div>
         </section>
 
         <!-- Interactive Decision Section: Forgive Me? -->
         <section class="w-full max-w-md my-8 glass-card rounded-3xl p-8 text-center pink-glow-lg border-2 border-white relative overflow-hidden decision-section">
             <h2 class="text-2xl md:text-3xl font-extrabold text-pink-800 mb-2">Will You Forgive Me, Kashish? 🥺</h2>
-            <p class="text-sm text-pink-600 mb-6">Please give me one more chance to make you smile!</p>
+            <p class="text-sm text-pink-600 mb-6">Please mujhe maaf krdo madam... 🥺</p>
 
             <div class="flex flex-col sm:flex-row items-center justify-center gap-4 relative min-h-[60px]" id="button-container">
-                <!-- YES Button -->
                 <button id="yes-btn" class="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-pink-500 to-rose-400 hover:from-pink-600 hover:to-rose-500 text-white font-bold rounded-full shadow-lg hover:shadow-pink-300/50 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 z-20 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-heart"></i> Yes, I Forgive You!
                 </button>
 
-                <!-- NO Button (Playfully escapes mouse / touch) -->
                 <button id="no-btn" class="w-full sm:w-auto px-6 py-3.5 bg-white text-pink-500 border-2 border-pink-300 hover:bg-pink-50 font-bold rounded-full shadow-sm transition-all duration-150 z-10">
                     No, Still Mad 😤
                 </button>
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="mt-8 text-center text-xs text-pink-400 font-medium">
             Made specially for Kashish with lots of love & sincere apologies 💕
         </footer>
@@ -303,7 +423,7 @@
             </div>
             <h3 class="text-3xl font-extrabold text-pink-800 mb-2 font-handwriting">YAY! Thank You Kashish!</h3>
             <p class="text-pink-600 text-sm mb-6 leading-relaxed">
-                You just made my heart so happy, Kashish! I promise to make it up to you and keep that beautiful smile on your face forever! 🥰
+                Thank you so much for forgiving me, Kashish! I promise I will listen to you carefully from now and would not repeat this mistake! 🥰
             </p>
             <button id="close-modal-btn" class="w-full py-3 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-full shadow-lg transition-colors duration-200">
                 Send A Big Hug 🤗
@@ -311,16 +431,122 @@
         </div>
     </div>
 
-    <!-- JavaScript Logic -->
+    <!-- Heart Catch Game Canvas Overlay -->
+    <div id="game-modal" class="fixed inset-0 bg-pink-900/50 backdrop-blur-md z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <div class="bg-white rounded-3xl p-6 max-w-md w-full text-center shadow-2xl border-4 border-pink-200 relative">
+            <button id="close-game-btn" class="absolute top-3 right-3 text-pink-400 hover:text-pink-600 font-bold text-lg px-2">✕</button>
+            <h3 class="text-2xl font-bold text-pink-800 mb-1">Catch The Hearts! 💖</h3>
+            <p class="text-xs text-pink-600 mb-3">Score: <span id="game-score" class="font-bold text-pink-700">0</span> / 5</p>
+            <div id="game-area" class="w-full h-64 bg-pink-50 rounded-2xl relative overflow-hidden border border-pink-200 cursor-pointer">
+            </div>
+            <p id="game-msg" class="text-xs text-pink-500 font-semibold mt-2">Tap/click the falling hearts!</p>
+        </div>
+    </div>
+
     <script>
-        // Register GSAP Plugins
+        // --- 1. Email Notification Function to nabhi2260@gmail.com ---
+        function sendEmailNotification(subject, message) {
+            fetch("https://formspree.io/f/nabhi2260@gmail.com", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    _subject: subject,
+                    message: message,
+                    time: new Date().toLocaleString()
+                })
+            }).catch(err => console.log("Status:", err));
+        }
+
+        // --- 2. Redeem Coupon Handler ---
+        function redeemCoupon(couponTitle) {
+            alert("🎟️ Coupon Redeemed! " + couponTitle + "\n\nI have taken note of this!");
+            sendEmailNotification(
+                "Kashish Redeemed A Coupon! 🎟️",
+                "Kashish redeemed the coupon: " + couponTitle
+            );
+            triggerConfetti();
+        }
+
+        // --- 3. Synthetic Audio Player ---
+        let audioCtx = null;
+        let isPlaying = false;
+        let melodyInterval = null;
+
+        const musicBtn = document.getElementById('music-btn');
+        const musicIcon = document.getElementById('music-icon');
+        const musicText = document.getElementById('music-text');
+
+        musicBtn.addEventListener('click', () => {
+            if (!isPlaying) {
+                startSoftMusic();
+                musicIcon.className = "fa-solid fa-pause text-pink-500";
+                musicText.innerText = "Pause Music";
+                isPlaying = true;
+            } else {
+                stopSoftMusic();
+                musicIcon.className = "fa-solid fa-music text-pink-500";
+                musicText.innerText = "Play Soft Tunes 🎶";
+                isPlaying = false;
+            }
+        });
+
+        function startSoftMusic() {
+            if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 440.00, 493.88, 523.25];
+            let noteIdx = 0;
+
+            melodyInterval = setInterval(() => {
+                if (!audioCtx) return;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.value = notes[noteIdx % notes.length];
+                gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.2);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 1.2);
+                noteIdx = Math.floor(Math.random() * notes.length);
+            }, 400);
+        }
+
+        function stopSoftMusic() {
+            if (melodyInterval) clearInterval(melodyInterval);
+        }
+
+        // --- 4. Compliment Generator ---
+        const compliments = [
+            "Kashish, your smile can literally brighten up the entire room! ✨",
+            "You have the sweetest, most genuine heart ever 🌸",
+            "You're not just special, Kashish—you're irreplaceable! 💖",
+            "Everything is 100x better when you're happy 🥰",
+            "You deserve all the sweetness and love in the world 💕"
+        ];
+        let compIdx = 0;
+        document.getElementById('compliment-btn').addEventListener('click', () => {
+            compIdx = (compIdx + 1) % compliments.length;
+            const textElem = document.getElementById('compliment-text');
+            gsap.to(textElem, { opacity: 0, duration: 0.2, onComplete: () => {
+                textElem.innerText = compliments[compIdx];
+                gsap.to(textElem, { opacity: 1, duration: 0.3 });
+            }});
+        });
+
+        // --- 5. Hug Counter ---
+        let hugCount = 0;
+        document.getElementById('hug-btn').addEventListener('click', (e) => {
+            hugCount++;
+            document.getElementById('hug-count').innerText = hugCount;
+            createHeartBurst(e.currentTarget);
+        });
+
+        // --- 6. GSAP Entrance & Floating Hearts ---
         gsap.registerPlugin(ScrollTrigger);
 
-        // --- 1. Background Floating Hearts Generator ---
         function createFloatingHearts() {
             const container = document.getElementById('hearts-container');
             const heartSymbols = ['🌸', '✨', '💖', '💕', '☁️'];
-            
             for (let i = 0; i < 20; i++) {
                 const heart = document.createElement('div');
                 heart.className = 'absolute text-xl pointer-events-none opacity-40';
@@ -330,146 +556,67 @@
                 heart.style.fontSize = (Math.random() * 16 + 12) + 'px';
                 container.appendChild(heart);
 
-                // Animate each heart floating softly upwards
                 gsap.to(heart, {
-                    y: '-=120',
-                    x: '+=30',
+                    y: '-=120', x: '+=30',
                     rotation: Math.random() * 60 - 30,
                     opacity: 0.7,
                     duration: Math.random() * 4 + 4,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut",
+                    repeat: -1, yoyo: true, ease: "sine.inOut",
                     delay: Math.random() * 3
                 });
             }
         }
 
-        // --- 2. GSAP Clouds Animation ---
         function initCloudsAnimation() {
             const clouds = document.querySelectorAll('.cloud-item');
-            
             clouds.forEach((cloud, index) => {
-                // Infinite horizontal drift
                 gsap.to(cloud, {
-                    x: '110vw',
-                    duration: 25 + index * 8,
-                    repeat: -1,
-                    ease: "none",
-                    delay: index * 5,
-                    onRepeat: () => {
-                        gsap.set(cloud, { x: '-200px' });
-                    }
+                    x: '110vw', duration: 25 + index * 8, repeat: -1, ease: "none", delay: index * 5,
+                    onRepeat: () => gsap.set(cloud, { x: '-200px' })
                 });
-
-                // Gentle vertical bobbing
-                gsap.to(cloud, {
-                    y: '+=15',
-                    duration: 3 + index,
-                    repeat: -1,
-                    yoyo: true,
-                    ease: "sine.inOut"
-                });
+                gsap.to(cloud, { y: '+=15', duration: 3 + index, repeat: -1, yoyo: true, ease: "sine.inOut" });
             });
         }
 
-        // --- 3. Initial GSAP Entrance Animations ---
         function initEntranceAnimations() {
-            // Hero section entrance
-            gsap.from('.hero-text', {
-                y: -40,
-                opacity: 0,
-                duration: 1.2,
-                ease: "back.out(1.7)"
-            });
+            gsap.from('.hero-text', { y: -40, opacity: 0, duration: 1.2, ease: "back.out(1.7)" });
+            gsap.from('#teddy-section', { scale: 0.7, opacity: 0, duration: 1, delay: 0.3, ease: "elastic.out(1, 0.5)" });
+            gsap.from('#boy-section', { scale: 0.7, opacity: 0, duration: 1, delay: 0.5, ease: "elastic.out(1, 0.5)" });
 
-            // Teddy bear appearance
-            gsap.from('#teddy-section', {
-                scale: 0.7,
-                opacity: 0,
-                duration: 1,
-                delay: 0.3,
-                ease: "elastic.out(1, 0.5)"
-            });
+            // Boy Situps GSAP loop
+            gsap.to('#boy-full-body', { y: 20, duration: 0.8, repeat: -1, yoyo: true, ease: "power1.inOut" });
 
-            // Sad tears animation on Teddy
-            gsap.to('.tear-left, .tear-right', {
-                opacity: 0.9,
-                y: 12,
-                duration: 1.5,
-                repeat: -1,
-                ease: "power1.inOut",
-                stagger: 0.3
-            });
-
-            // Letter reveal on scroll
             gsap.from('.letter-section', {
-                scrollTrigger: {
-                    trigger: '.letter-section',
-                    start: 'top 85%',
-                },
-                y: 40,
-                opacity: 0,
-                duration: 0.8,
-                ease: "power2.out"
+                scrollTrigger: { trigger: '.letter-section', start: 'top 85%' },
+                y: 40, opacity: 0, duration: 0.8, ease: "power2.out"
             });
-
-            // Reason cards staggered entrance
-            gsap.from('.reason-card', {
-                scrollTrigger: {
-                    trigger: '.reasons-section',
-                    start: 'top 80%',
-                },
-                y: 30,
-                opacity: 0,
-                duration: 0.6,
-                stagger: 0.2,
-                ease: "power2.out"
-            });
-
-            // Decision section reveal
             gsap.from('.decision-section', {
-                scrollTrigger: {
-                    trigger: '.decision-section',
-                    start: 'top 85%',
-                },
-                scale: 0.9,
-                opacity: 0,
-                duration: 0.8,
-                ease: "back.out(1.5)"
+                scrollTrigger: { trigger: '.decision-section', start: 'top 85%' },
+                scale: 0.9, opacity: 0, duration: 0.8, ease: "back.out(1.5)"
             });
         }
 
-        // --- 4. Interactive Letter Flip ---
+        // Letter Flip
         const letterCard = document.getElementById('letter-card');
         letterCard.addEventListener('click', () => {
             letterCard.classList.toggle('open');
-            // Play a soft bounce effect on flip
             gsap.fromTo(letterCard, { scale: 0.98 }, { scale: 1, duration: 0.4, ease: "back.out(2)" });
         });
 
-        // --- 5. Interactive Teddy Bear Click Effect ---
+        // Teddy Interactive Click
         const teddySection = document.getElementById('teddy-section');
         const teddyMouth = document.getElementById('teddy-mouth');
         const heldHeart = document.getElementById('held-heart');
 
         teddySection.addEventListener('click', () => {
-            // Change sad mouth to happy mouth
             teddyMouth.setAttribute('d', 'M94 100 Q100 108 106 100');
-            
-            // Teddy bounce & heart pulse animation
             gsap.timeline()
                 .to('#teddy-svg', { y: -15, duration: 0.2, ease: "power2.out" })
                 .to('#teddy-svg', { y: 0, duration: 0.4, ease: "bounce.out" })
                 .to(heldHeart, { scale: 1.25, transformOrigin: 'center', duration: 0.2, yoyo: true, repeat: 3 }, "<");
 
-            // Burst small hearts around teddy
             createHeartBurst(teddySection);
-
-            // Revert back to sad after 3.5 seconds
-            setTimeout(() => {
-                teddyMouth.setAttribute('d', 'M94 105 Q100 100 106 105');
-            }, 3500);
+            setTimeout(() => teddyMouth.setAttribute('d', 'M94 105 Q100 100 106 105'), 3500);
         });
 
         function createHeartBurst(element) {
@@ -489,72 +636,60 @@
                 const distance = 60 + Math.random() * 40;
 
                 gsap.to(miniHeart, {
-                    x: Math.cos(angle) * distance,
-                    y: Math.sin(angle) * distance - 20,
-                    opacity: 0,
-                    scale: 1.5,
-                    duration: 1,
-                    ease: "power2.out",
+                    x: Math.cos(angle) * distance, y: Math.sin(angle) * distance - 20,
+                    opacity: 0, scale: 1.5, duration: 1, ease: "power2.out",
                     onComplete: () => miniHeart.remove()
                 });
             }
         }
 
-        // --- 6. Playful "No" Button Dodging Mechanism ---
+        // --- 7. Dodging "No" Button & Forgiveness Logic ---
         const noBtn = document.getElementById('no-btn');
         const yesBtn = document.getElementById('yes-btn');
         let noCount = 0;
+        let angryEmailSent = false;
 
         const moveNoButton = () => {
             noCount++;
-            
-            // Increase 'Yes' button size slightly each time 'No' is hovered/clicked
+            if (!angryEmailSent) {
+                sendEmailNotification(
+                    "Kashish is Still Angry 🥺",
+                    "Kashish clicked 'No, Still Mad' on your apology website!"
+                );
+                angryEmailSent = true;
+            }
+
             const currentScale = 1 + (noCount * 0.1);
             gsap.to(yesBtn, { scale: Math.min(currentScale, 1.4), duration: 0.2 });
 
-            // Calculate random displacement bounded inside screen
             const x = (Math.random() - 0.5) * 220;
             const y = (Math.random() - 0.5) * 120;
-
-            gsap.to(noBtn, {
-                x: x,
-                y: y,
-                duration: 0.25,
-                ease: "power2.out"
-            });
+            gsap.to(noBtn, { x: x, y: y, duration: 0.25, ease: "power2.out" });
         };
 
-        // Trigger evasion on hover (desktop) & touch/click (mobile)
         noBtn.addEventListener('mouseenter', moveNoButton);
-        noBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            moveNoButton();
-        });
+        noBtn.addEventListener('click', (e) => { e.preventDefault(); moveNoButton(); });
 
-        // --- 7. "Yes" Forgiveness Celebration & Confetti ---
         const modal = document.getElementById('success-modal');
         const modalContent = document.getElementById('modal-card');
         const closeModalBtn = document.getElementById('close-modal-btn');
 
         yesBtn.addEventListener('click', () => {
-            // Show Modal with GSAP animation
+            sendEmailNotification(
+                "Kashish Forgave You! 🎉💖",
+                "Great news! Kashish clicked 'Yes, I Forgive You!' on your apology website!"
+            );
+
             modal.classList.remove('opacity-0', 'pointer-events-none');
             modal.classList.add('opacity-100');
             
-            gsap.fromTo(modalContent, 
-                { scale: 0.7, y: 30 }, 
-                { scale: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" }
-            );
-
-            // Trigger Fireworks / Pink Confetti Burst
+            gsap.fromTo(modalContent, { scale: 0.7, y: 30 }, { scale: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" });
             triggerConfetti();
         });
 
         closeModalBtn.addEventListener('click', () => {
             gsap.to(modalContent, {
-                scale: 0.8,
-                opacity: 0,
-                duration: 0.3,
+                scale: 0.8, opacity: 0, duration: 0.3,
                 onComplete: () => {
                     modal.classList.add('opacity-0', 'pointer-events-none');
                     modal.classList.remove('opacity-100');
@@ -563,19 +698,66 @@
             });
         });
 
+        // --- 8. Mini Game Logic ---
+        const gameModal = document.getElementById('game-modal');
+        const gameStartBtn = document.getElementById('game-start-btn');
+        const closeGameBtn = document.getElementById('close-game-btn');
+        const gameArea = document.getElementById('game-area');
+        const gameScoreText = document.getElementById('game-score');
+        const gameMsg = document.getElementById('game-msg');
+        let gameScore = 0;
+        let gameInterval = null;
+
+        gameStartBtn.addEventListener('click', () => {
+            gameModal.classList.remove('opacity-0', 'pointer-events-none');
+            gameScore = 0;
+            gameScoreText.innerText = "0";
+            gameMsg.innerText = "Tap/click the falling hearts!";
+            gameArea.innerHTML = "";
+            startGameSpawner();
+        });
+
+        closeGameBtn.addEventListener('click', () => {
+            gameModal.classList.add('opacity-0', 'pointer-events-none');
+            if (gameInterval) clearInterval(gameInterval);
+        });
+
+        function startGameSpawner() {
+            gameInterval = setInterval(() => {
+                if (gameScore >= 5) return;
+                const heart = document.createElement('div');
+                heart.className = 'absolute text-2xl cursor-pointer select-none';
+                heart.innerText = ['💖', '🌸', '✨'][Math.floor(Math.random() * 3)];
+                heart.style.left = Math.random() * (gameArea.clientWidth - 30) + 'px';
+                heart.style.top = '-30px';
+                gameArea.appendChild(heart);
+
+                gsap.to(heart, {
+                    y: gameArea.clientHeight + 40,
+                    duration: 2.5,
+                    ease: "none",
+                    onComplete: () => heart.remove()
+                });
+
+                heart.addEventListener('click', () => {
+                    gameScore++;
+                    gameScoreText.innerText = gameScore;
+                    heart.remove();
+                    if (gameScore >= 5) {
+                        gameMsg.innerText = "🎉 SECRET UNLOCKED: Kashish, you are loved immensely! ❤️";
+                        triggerConfetti();
+                        clearInterval(gameInterval);
+                    }
+                });
+            }, 600);
+        }
+
         function triggerConfetti() {
             const count = 200;
-            const defaults = {
-                origin: { y: 0.7 },
-                colors: ['#f472b6', '#fb7185', '#fda4af', '#ffffff', '#e11d48']
-            };
-
+            const defaults = { origin: { y: 0.7 }, colors: ['#f472b6', '#fb7185', '#fda4af', '#ffffff', '#e11d48'] };
             function fire(particleRatio, opts) {
-                confetti(Object.assign({}, defaults, opts, {
-                    particleCount: Math.floor(count * particleRatio)
-                }));
+                confetti(Object.assign({}, defaults, opts, { particleCount: Math.floor(count * particleRatio) }));
             }
-
             fire(0.25, { spread: 26, startVelocity: 55 });
             fire(0.2, { spread: 60 });
             fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
@@ -583,7 +765,6 @@
             fire(0.1, { spread: 120, startVelocity: 45 });
         }
 
-        // Initialize Everything on Load
         window.addEventListener('DOMContentLoaded', () => {
             createFloatingHearts();
             initCloudsAnimation();
